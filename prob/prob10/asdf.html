@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+</head>
+<body>
+
+<form action="index.php" method="POST">
+<input type="text" name="input">
+<input type="submit" value="submit">
+</form>
+</br>
+Can you see this?
+</form>
+
+<!--
+
+Can you detour this?
+
+index.php
+<?php
+
+$v1 = md5($_POST[input]);
+
+if($v1 == '0')
+{
+	echo flag;
+}
+
+else
+	echo "Try again";
+?>
+
+
+-->
+
+</body>
+</html>

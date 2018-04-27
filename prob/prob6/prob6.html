@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+
+  $(function()
+  {
+    $prob_num = 6;
+    $prob_point = 100;
+
+    $("#button1").click(function()
+      {
+        $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "prob6-check.php",
+        data: {flag: $("#pass").val(), prob_num: 6, prob_point: 100},
+        async: false,
+
+        success: function(data)
+        {
+          if(data==1)
+          {
+            alert("Success!!  point + " + $prob_point);
+            top.document.location.reload();
+          }
+          else if (data==0)
+            alert("Fail!!");
+          else if(data ==3)
+            alert("Login First Please..");
+          else if(data ==4)
+            alert("alreay solved");
+        }
+      });
+
+      });
+  });
+      
+  </script>
+
+</head>
+<body>
+  
+  <!--<header>-->
+  <br/>
+    <h2>&#9813;Challenge PROB 6.&#9813;</h>
+
+  <header><br/><br/>
+    <h6>FROMNAVER.jpg에 숨겨둔 flag를 찾으시오? by 우재훈</h><br><br>
+    <a href="FROMNAVER.jpg" download><h6>문제 다운로드</h6></a><br>
+  </header>
+
+  <div class="flag2">
+    <label for="Flag">&nbsp;Flag :&nbsp;</label>
+
+      <input type="text" id="pass" />
+      <input type="button" id="button1" value="submit" />
+
+  </div>
+
+</body>
+</html>

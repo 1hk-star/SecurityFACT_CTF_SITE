@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <center><img id="image" width="200" height="100"/></center>
+  <script>
+      window.onload = function () {
+          // 변수를 선언합니다.
+          var count = 0;
+          var image = document.getElementById('image');
+          var frames = [
+              '../picture/1.png', '../picture/2.png', '../picture/3.png', '../picture/4.png', '../picture/5.png',
+              '../picture/6.png', '../picture/7.png', '../picture/8.png'
+          ];
+          // 타이머 반복을 시작합니다.
+          setInterval(function () {
+              image.src = frames[count % frames.length];
+              count = count + 1;
+          }, 1000 / 8);
+      };
+  </script>
+  <title> WebChallenge - Web CTF </title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('p').click(function(){
+            alert('Flag is "Welcome to WebChallenge"!');
+        });
+    });
+  </script>
+</head>
+<!-- hint : click <footer> -->
+<body>
+  <header>
+    <h1>WebChallenge</h1>
+    <h3><i>CTF for Newbie Web Programmer</i></h3>
+		<hr />
+    <br /><br />
+	</header>
+  <div class="flag1">&#9971;Capture The Flag and Join Us!&#9971;</div>
+<head>
+  <script>
+    function whenSubmit() {
+    var pass = document.getElementById('pass').value;
+    var pass_check = 'Welcome to WebChallenge'
+
+    if (pass == pass_check) {
+    alert('Congratulation!');
+    }
+    else {
+    alert('Try Again!');
+    return false;
+    }
+    }
+  </script>
+</head>
+    <body>
+    <div class="flag2"><form action="index.html" id="my_form" onsubmit="return whenSubmit()">
+    <input type="text" name="pass" id="pass" />
+    <input type="submit" value="submit" /></div>
+    </form>
+    <br />
+    <img src="../picture/image1.jpg" width="960" height="500" />
+  <br /><br />
+	<footer>
+		<p>Copyrightⓒ Choi Ga-Yeong All Rights Reserved.</p>
+	</footer>
+  <br />
+</body>
+</html>

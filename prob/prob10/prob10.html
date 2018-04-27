@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <style type="text/css">
+    a {
+      color: #262626;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+
+  $(function()
+  {
+
+    $("#button1").click(function()
+      {
+        $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "prob10-check.php",
+        data: {flag: $("#pass").val()},
+        async: false,
+
+        success: function(data)
+        {
+          if(data==1)
+          {
+            alert("Success!!  point + 150" );
+            top.document.location.reload();
+          }
+          else if (data==0)
+            alert("Fail!!");
+          else if(data ==3)
+            alert("Login First Please..");
+          else if(data ==4)
+            alert("alreay solved");
+        }
+      });
+
+      });
+  });
+      
+  </script>
+
+</head>
+<body>
+  
+  <!--<header>-->
+  <br/>
+    <h2>&#9813;Challenge PROB 10.&#9813;</h>
+
+  <header><br/><br/>
+    <h6>Can you come <a href ="asdf.html" target="_blank">in?</a></h6><br><br>
+  </header>
+
+  <div class="flag2">
+    <label for="Flag">&nbsp;Flag :&nbsp;</label>
+
+      <input type="text" id="pass" />
+      <input type="button" id="button1" value="submit" />
+
+  </div>
+
+</body>
+</html>

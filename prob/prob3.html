@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+
+      function whenSubmit() {
+      var pass = document.getElementById('pass').value;
+      var pass_check = '4637'
+
+      if (pass === pass_check) {
+      alert('Congratulation!');
+      }
+      else {
+      alert('Try Again!');
+      return false; // 기본이벤트제거, 입력양식을 제출하지않는다.
+      }
+      }
+
+    </script>
+    <style>
+    div.out{
+      margin-left: 240px;
+      width:100px;
+      height:100px;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: gray;
+      text-align: center;
+      line-height: 100px;
+      float:left;
+      font-size: 40px;
+    }
+    div.out1{
+      width:100px;
+      height:100px;
+      margin: 10px;
+      background-color: gray;
+      text-align: center;
+      line-height: 100px;
+      float:left;
+      font-size: 40px;
+    }
+    div.out2{
+      width:100px;
+      height:100px;
+      margin: 10px;
+      line-height: 100px;
+      background-color: gray;
+      text-align: center;
+      float:left;
+      font-size: 40px;
+    }
+    div.out3{
+      width:100px;
+      height:100px;
+      margin: 10px;
+      line-height: 100px;
+      background-color: gray;
+      text-align: center;
+      float:left;
+      font-size: 40px;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <header>
+    <br/>
+      <h2>&#9813;Challenge PROB 3.&#9813;</h>
+        <h6>비밀번호 네 자리를 입력하세요.</h></br>
+    <br/><br/>
+    <div class="flag2"><form action="../main/index.html" id="my_form" onsubmit="return whenSubmit()">
+    <label for="Flag" style="font-family: fantasy;">&nbsp;Flag :&nbsp;</label>
+    <input type="text" name="pass" id="pass" />
+    <input type="submit" value="submit" /></div></form></br></br>
+    <h5>&#9939;PASSWORD&#9939;</h>
+    </header>
+    <div class="out">
+      <p>0</p>
+    </div>
+    <div class="out1">
+      <p>0</p>
+    </div>
+    <div class="out2">
+      <p>0</p>
+    </div>
+    <div class="out3">
+      <p>0</p>
+    </div>
+
+    <script>
+    var i=0;
+    $("div.out").mouseup(function(){
+      $("p:first", this).text("mouse click!");
+      $("p:last", this).text(++i);
+
+      if(i>8){
+        i=i-10;
+      }
+    })
+    var i1=0;
+    $("div.out1").mouseup(function(){
+      $("p:first", this).text("mouse click!");
+      $("p:last", this).text(++i1);
+
+      if(i1>8){
+        i1=i1-10;
+      }
+    })
+    var i2=0;
+    $("div.out2").mouseup(function(){
+      $("p:first", this).text("mouse click!");
+      $("p:last", this).text(++i2);
+
+      if(i2>8){
+        i2=i2-10;
+      }
+    })
+    var i3=0;
+    $("div.out3").mouseup(function(){
+      $("p:first", this).text("mouse click!");
+      $("p:last", this).text(++i3);
+
+      if(i3>8){
+        i3=i3-10;
+      }
+    })
+    </script>
+  </body>
+</html>
